@@ -23,7 +23,7 @@ function main() {
             loaders: [
                 {
                     test: /\.md$/,
-                    loader: 'html!markdown-loader',
+                    loader: 'html!../index!markdown-loader',
                 }
             ]
         }

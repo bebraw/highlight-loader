@@ -3,7 +3,9 @@
   "description": "Applies highlight.js to given HTML",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
   "version": "0.1.0",
+  "main": "./index.js",
   "dependencies": {
+    "cheerio": "^0.18.0",
     "highlight.js": "^8.4.0"
   },
   "devDependencies": {
