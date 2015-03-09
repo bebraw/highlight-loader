@@ -1,0 +1,30 @@
+{
+  "name": "highlight-loader",
+  "description": "Applies highlight.js to given HTML",
+  "author": "Juho Vepsalainen <bebraw@gmail.com>",
+  "version": "0.1.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bebraw/highlight-loader.git"
+  },
+  "homepage": "https://github.com/bebraw/highlight-loader",
+  "bugs": {
+    "url": "https://github.com/bebraw/highlight-loader/issues"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "html",
+    "highlight"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/bebraw/highlight-loader/blob/master/LICENSE"
+    }
+  ]
+}
