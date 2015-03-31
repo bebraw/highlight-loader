@@ -2,7 +2,7 @@
   "name": "highlight-loader",
   "description": "Applies highlight.js to given HTML",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "./index.js",
   "dependencies": {
     "cheerio": "^0.18.0",
