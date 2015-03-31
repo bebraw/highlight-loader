@@ -1,6 +1,8 @@
 'use strict';
 var cheerio = require('cheerio');
-var highlight = require('highlight.js').highlightAuto;
+var hl = require('highlight.js');
+var highlightAuto = hl.highlightAuto;
+var highlight = hl.highlight;
 
 
 module.exports = function(input) {
@@ -9,10 +11,20 @@ module.exports = function(input) {
     var $ = cheerio.load(input);
 
     $('code').replaceWith(function(i, e) {
-        var html = $(e).html();
+        var $e = $(e);
+        var html = $e.html();
+        var klass = $e.attr('class') || '';
+        var lang = klass.split('lang-').filter(id);
+        lang = lang && lang[0];
 
-        return highlight(html).value;
+        if(lang) {
+            return highlight(lang, html).value;
+        }
+
+        return highlightAuto(html).value;
     });
 
     return $.html();
 };
+
+function id(a) {return a;}
