@@ -12,6 +12,12 @@ module.exports = function(input) {
 
     $('code').replaceWith(function(i, e) {
         var $e = $(e);
+        var text = $e.text();
+
+        if(text.split('\n').length < 2) {
+          return $('<code>' + text + '</code>');
+        }
+
         var html = $e.html();
         var klass = $e.attr('class') || '';
         var lang = klass.split('lang-').filter(id);

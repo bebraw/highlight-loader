@@ -1,6 +1,6 @@
 # Demo
 
-This is just some **demo**
+This is just some **demo** and `something that should not get highlighted`.
 
 ```javascript
 var a = 4;
