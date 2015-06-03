@@ -28,10 +28,5 @@
     "html",
     "highlight"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/bebraw/highlight-loader/blob/master/LICENSE"
-    }
-  ]
+  "license": "MIT"
 }
