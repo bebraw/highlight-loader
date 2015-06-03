@@ -6,6 +6,7 @@
   "main": "./index.js",
   "dependencies": {
     "cheerio": "^0.18.0",
+    "he": "^0.5.0",
     "highlight.js": "^8.4.0"
   },
   "devDependencies": {

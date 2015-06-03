@@ -1,5 +1,6 @@
 'use strict';
 var cheerio = require('cheerio');
+var he = require('he');
 var hl = require('highlight.js');
 var highlightAuto = hl.highlightAuto;
 var highlight = hl.highlight;
@@ -15,7 +16,7 @@ module.exports = function(input) {
         var text = $e.text();
 
         if(text.split('\n').length < 2) {
-          return $('<code>' + text + '</code>');
+          return $('<code>' + he.encode(text) + '</code>');
         }
 
         var html = $e.html();
