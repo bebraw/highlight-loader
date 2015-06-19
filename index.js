@@ -19,16 +19,16 @@ module.exports = function(input) {
           return $('<code>' + he.encode(text) + '</code>');
         }
 
-        var html = $e.html();
+        var text = $e.text();
         var klass = $e.attr('class') || '';
         var lang = klass.split('lang-').filter(id);
         lang = lang && lang[0];
 
         if(lang) {
-            return highlight(lang, html).value;
+            return highlight(lang, text).value;
         }
 
-        return highlightAuto(html).value;
+        return highlightAuto(text).value;
     });
 
     return $.html();
