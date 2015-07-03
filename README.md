@@ -9,6 +9,10 @@ This can be handy with [markdown-loader](https://github.com/peerigon/markdown-lo
 var html = require('html!highlight!markdown!./README.md');
 ```
 
+## Contributors
+
+* [Zane Miller](https://github.com/ZaneMiller) - Added missing `hljs` class to `pre` element
+
 ## License
 
 highlight-loader is available under MIT. See LICENSE for more details.
