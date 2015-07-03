@@ -30,6 +30,8 @@ module.exports = function(input) {
 
         return highlightAuto(text).value;
     });
+    
+    $('pre').addClass('hljs');
 
     return $.html();
 };
