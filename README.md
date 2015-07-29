@@ -12,6 +12,7 @@ var html = require('html!highlight!markdown!./README.md');
 ## Contributors
 
 * [Zane Miller](https://github.com/ZaneMiller) - Added missing `hljs` class to `pre` element
+* [Javier Castro](https://github.com/jacargentina) - Add Node.js support
 
 ## License
 
