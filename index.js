@@ -7,7 +7,7 @@ var highlight = hl.highlight;
 
 
 module.exports = function(input) {
-    this.cacheable && this.cacheable();
+    this && this.cacheable && this.cacheable();
 
     var $ = cheerio.load(input);
 
