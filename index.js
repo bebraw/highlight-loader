@@ -2,12 +2,18 @@
 var cheerio = require('cheerio');
 var he = require('he');
 var hl = require('highlight.js');
+var loaderUtils = require('loader-utils');
 var highlightAuto = hl.highlightAuto;
 var highlight = hl.highlight;
 
 
 module.exports = function(input) {
     this && this.cacheable && this.cacheable();
+    var query = loaderUtils.parseQuery(this.query);
+
+    if(query.raw) {
+        return 'module.exports = ' + JSON.stringify(highlightCode(input, query.lang));
+    }
 
     var $ = cheerio.load(input);
 
@@ -24,11 +30,7 @@ module.exports = function(input) {
         var lang = klass.split('lang-').filter(id);
         lang = lang && lang[0];
 
-        if(lang) {
-            return highlight(lang, text).value;
-        }
-
-        return highlightAuto(text).value;
+        return highlightCode(text, lang);
     });
 
     $('pre').addClass('hljs');
@@ -37,3 +39,11 @@ module.exports = function(input) {
 };
 
 function id(a) {return a;}
+
+function highlightCode(code, lang) {
+  if(lang) {
+      return highlight(lang, code).value;
+  }
+
+  return highlightAuto(code).value;
+}
