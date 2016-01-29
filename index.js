@@ -11,6 +11,10 @@ module.exports = function(input) {
     this && this.cacheable && this.cacheable();
     var query = loaderUtils.parseQuery(this.query);
 
+    if(query.exec) {
+        input = this.exec(input, this.resource);
+    }
+
     if(query.raw) {
         return 'module.exports = ' + JSON.stringify(highlightCode(input, query.lang));
     }
