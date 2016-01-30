@@ -23,6 +23,12 @@ Specify a language for highlight.js. Only works in combination with the `raw` pa
 
 (To specify a language for non-raw input, apply `lang-[something]` classes to your `<code>` blocks.)
 
+### exec
+
+Execute the input that `highlight-loader` receives. Useful in cases when chaining another loader which returns a function. One use case is to combine this with the [apply-loader](https://github.com/mogelbrod/apply-loader).
+
+By default, exec is `false` and simply treats its input as a string.
+
 ## Examples
 
 ```javascript
@@ -34,6 +40,9 @@ var highlightedRaw = require('html!highlight?raw=true!./example-script.js');
 
 // Reading a file's raw contents and specifying the language ...
 var highlightedRawCss = require('html!highlight?raw=true&lang=css!./example-stylesheet.css');
+
+// Reading HTML from a template loader ...
+var highlightedRenderedJadeTemplate = require('html!highlight?exec!apply!jade!./index.jade')
 ```
 
 ## Contributors
