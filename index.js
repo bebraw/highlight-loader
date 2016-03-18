@@ -34,6 +34,13 @@ module.exports = function(input) {
         var lang = klass.split('lang-').filter(id);
         lang = lang && lang[0];
 
+        if(klass == 'html'){
+            text = $e.html()
+                .replace(/&quot;/g,'"')
+                .replace(/&lt;/g,'<')
+                .replace(/&gt;/g,'>');
+        }
+
         return highlightCode(text, lang);
     });
 
