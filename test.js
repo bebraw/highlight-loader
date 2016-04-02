@@ -40,7 +40,7 @@ describe('highlight-loader', function () {
     const given = loader.call(assign({}, webpackContext, {
       query: '?raw=true'
     }), code);
-    const expected = 'module.exports = "demo"';
+    const expected = 'module.exports = "<span class=\\"hljs-built_in\\">demo</span>"';
 
     assert.equal(given, expected);
   });
