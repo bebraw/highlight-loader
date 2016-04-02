@@ -7,7 +7,7 @@ var highlightAuto = hl.highlightAuto;
 var highlight = hl.highlight;
 
 module.exports = function(input) {
-  this && this.cacheable && this.cacheable();
+  this.cacheable();
   var query = loaderUtils.parseQuery(this.query);
 
   if(query.exec) {
