@@ -7,6 +7,8 @@ var highlightAuto = hl.highlightAuto;
 var highlight = hl.highlight;
 
 module.exports = function(input) {
+  input = input || '';
+
   this.cacheable();
   var query = loaderUtils.parseQuery(this.query);
 
