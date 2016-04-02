@@ -44,6 +44,16 @@ describe('highlight-loader', function () {
 
     assert.equal(given, expected);
   });
+
+  it('should support raw output with lang', function () {
+    const code = 'a = 4';
+    const given = loader.call(assign({}, webpackContext, {
+      query: '?raw=true&lang=python'
+    }), code);
+    const expected = 'module.exports = "a = <span class=\\"hljs-number\\">4</span>"';
+
+    assert.equal(given, expected);
+  });
 });
 
 function noop() {}
