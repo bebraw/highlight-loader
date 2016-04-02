@@ -54,6 +54,23 @@ describe('highlight-loader', function () {
 
     assert.equal(given, expected);
   });
+
+  it('should support exec', function () {
+    var executed = false;
+    const code = 'demo';
+    const given = loader.call(assign({}, webpackContext, {
+      exec: function(input) {
+        executed = true;
+
+        return input;
+      },
+      query: '?exec=true'
+    }), code);
+    const expected = 'demo';
+
+    assert.equal(executed, true);
+    assert.equal(given, expected);
+  });
 });
 
 function noop() {}
