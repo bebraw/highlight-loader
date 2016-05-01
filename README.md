@@ -29,7 +29,19 @@ Execute the input that `highlight-loader` receives. Useful in cases when chainin
 
 By default, exec is `false` and simply treats its input as a string.
 
-## Examples
+## Installation & examples
+
+Install with npm:
+
+```bash
+npm install highlight-loader --save
+```
+
+Make sure [`highlightjs`](https://github.com/isagalaev/highlight.js) is included and initialized on your page.
+
+Add `highlight-loader` as a [webpack loader](https://webpack.github.io/docs/loaders.html). See the examples below:
+
+#### Examples
 
 ```javascript
 // Reading HTML from parsed markdown ...
