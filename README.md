@@ -63,6 +63,7 @@ var highlightedRenderedJadeTemplate = require('html!highlight?exec!apply!jade!./
 * [Zane Miller](https://github.com/ZaneMiller) - Added missing `hljs` class to `pre` element
 * [Javier Castro](https://github.com/jacargentina) - Added Node support
 * [Sidd Sridharan](https://github.com/sidd) - Added support for `exec` parameter
+* [M.K. Safi](https://github.com/msafi) - Added installation instructions
 
 ## License
 
