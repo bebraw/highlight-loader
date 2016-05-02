@@ -29,31 +29,45 @@ Execute the input that `highlight-loader` receives. Useful in cases when chainin
 
 By default, exec is `false` and simply treats its input as a string.
 
-## Installation & examples
+## Installation
 
 Install with npm:
 
 ```bash
-npm install highlight-loader --save
+npm install highlight-loader --save-dev
 ```
 
 Make sure [`highlightjs`](https://github.com/isagalaev/highlight.js) is included and initialized on your page.
 
-Add `highlight-loader` as a [webpack loader](https://webpack.github.io/docs/loaders.html). See the examples below:
+## Usage
 
-#### Examples
+Add `highlight-loader` as a [webpack loader](https://webpack.github.io/docs/loaders.html):
 
 ```javascript
-// Reading HTML from parsed markdown ...
+module: {
+  loaders: [
+    {
+      test: /\.md$/,
+      loader: 'html!highlight!markdown',
+      include: PATHS.markdown
+    }
+  ]
+}
+```
+
+## Examples
+
+```javascript
+// Reading HTML from parsed markdown
 var highlightedMarkdown = require('html!highlight!markdown!./README.md');
 
-// Reading a file's raw contents and auto-detecting the language ...
+// Reading a file's raw contents and auto-detecting the language
 var highlightedRaw = require('html!highlight?raw=true!./example-script.js');
 
-// Reading a file's raw contents and specifying the language ...
+// Reading a file's raw contents and specifying the language
 var highlightedRawCss = require('html!highlight?raw=true&lang=css!./example-stylesheet.css');
 
-// Reading HTML from a template loader ...
+// Reading HTML from a template loader
 var highlightedRenderedJadeTemplate = require('html!highlight?exec!apply!jade!./index.jade')
 ```
 
