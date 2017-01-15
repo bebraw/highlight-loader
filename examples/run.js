@@ -7,9 +7,8 @@ var webpack = require('webpack');
 main();
 
 function main() {
-    console.log('Starting building demo');
+    console.log('Starting building examples');
 
-    // TODO: exec webpack
     webpack({
         entry: path.resolve(__dirname, 'demo_index'),
         output: {
