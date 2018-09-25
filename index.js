@@ -32,8 +32,8 @@ module.exports = function(input) {
 
     var text = $e.text();
     var klass = $e.attr('class') || '';
-    var lang = klass.split('lang-').filter(id);
-    lang = lang && lang[0];
+    var lang = klass.match(/(lang|language)-(.+)/);
+    lang = lang && lang[2];
 
     return highlightCode(text, lang);
   });
