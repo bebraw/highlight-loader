@@ -32,7 +32,7 @@ module.exports = function(input) {
 
     var text = $e.text();
     var klass = $e.attr('class') || '';
-    var lang = klass.split('lang-').filter(id);
+    var lang = klass.split('language-').filter(id);
     lang = lang && lang[0];
 
     return highlightCode(text, lang);
