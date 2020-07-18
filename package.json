@@ -10,6 +10,7 @@
     "loader-utils": "^0.2.12"
   },
   "devDependencies": {
+    "highlight.js": "^10.1.1",
     "html-loader": "^0.4.0",
     "loader-utils": "^0.2.13",
     "markdown-loader": "^0.1.2",
